@@ -52,7 +52,7 @@ CREATE OR REPLACE STAGE FROSTBYTE_RAW_STAGE
     URL = 's3://sfquickstarts/data-engineering-with-snowpark-python/'
 ;
 
-
+/*
 -- ----------------------------------------------------------------------------
 -- Create the PyPI external access integration
 -- ----------------------------------------------------------------------------
@@ -70,7 +70,7 @@ ALLOWED_NETWORK_RULES = (PYPI_NETWORK_RULE)
 ENABLED = true;
 
 GRANT USAGE ON INTEGRATION PYPI_ACCESS_INTEGRATION TO ROLE DEMO_ROLE;
-
+*/
 
 -- ----------------------------------------------------------------------------
 -- Create the event table
