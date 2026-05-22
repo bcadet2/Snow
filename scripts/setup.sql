@@ -12,7 +12,7 @@ Last Updated: 2/27/2026
 SET MY_USER = CURRENT_USER();
 USE ROLE ACCOUNTADMIN;
 
--- Roles
+-- RolesDEMO_DB
 CREATE OR REPLACE ROLE DEMO_ROLE;
 GRANT ROLE DEMO_ROLE TO ROLE SYSADMIN;
 GRANT ROLE DEMO_ROLE TO USER IDENTIFIER($MY_USER);
@@ -56,6 +56,8 @@ CREATE OR REPLACE STAGE FROSTBYTE_RAW_STAGE
 -- ----------------------------------------------------------------------------
 -- Create the PyPI external access integration
 -- ----------------------------------------------------------------------------
+
+
 USE ROLE ACCOUNTADMIN;
 
 -- This is a schema level object

@@ -1,0 +1,1 @@
+DROP database pelmorex_weather_source_frostbyte
