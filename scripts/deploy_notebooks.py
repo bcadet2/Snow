@@ -16,11 +16,14 @@ def main(session: Session, database_name: str, schema_name: str, notebook_projec
     2. Uploads all files from the local folder to the stage
     3. Creates or updates the notebook project from the staged files
     """
-    # Step 1: Get a temporary stage from the session
+    # Step 1: Create a temporary stage for uploading files
     session_stage = session.get_session_stage()
     print(f"Using session stage: {session_stage}")
+    # session.sql(f"CREATE TEMPORARY STAGE IF NOT EXISTS {database_name}.{schema_name}.DEPLOY_NOTEBOOKS_TEMP_STAGE").collect()
+    # session_stage = f"@{database_name}.{schema_name}.DEPLOY_NOTEBOOKS_TEMP_STAGE"
+    # print(f"Using stage: {session_stage}")
 
-    # Step 2: Upload all files from the local folder to the stage
+    # Step 2: Upload all90 files from the local folder to the stage
     print(f"Uploading files from: {local_folder_path}")
     session.file.put(f"file://{local_folder_path}/*", session_stage, auto_compress=False, overwrite=True)
 
